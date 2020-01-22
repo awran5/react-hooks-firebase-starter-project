@@ -36,7 +36,7 @@ export const useSnapshots = collection => {
 	return { loading, error, data }
 }
 
-// Get data by 'Doc' ID
+// Get data by 'Doc' id
 export const useDocById = (collection, id) => {
 	const firebase = useContext(FirebaseContext)
 	const [ data, setData ] = useState([])
