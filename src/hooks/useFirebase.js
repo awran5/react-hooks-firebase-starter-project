@@ -6,7 +6,6 @@ export const useSnapshots = collection => {
   const firebase = useContext(FirebaseContext)
   const [ data, setData ] = useState([])
   const [ loading, setLoading ] = useState(false)
-  const [ error, setError ] = useState('')
 
   useEffect(
     () => {
@@ -25,7 +24,6 @@ export const useSnapshots = collection => {
         },
         err => {
           console.log(err)
-          setError(err)
         }
       )
       return () => unsubscribe()
@@ -33,7 +31,7 @@ export const useSnapshots = collection => {
     [ firebase, collection ]
   )
 
-  return { loading, error, data }
+  return { loading, data }
 }
 
 // Get data by 'Doc' ID
